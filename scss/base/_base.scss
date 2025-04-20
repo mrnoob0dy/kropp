@@ -54,6 +54,40 @@ body {
   @media (max-width: 767px) {
     padding: 0 20px;
   }
+
+  &.transparent {
+    position: relative;
+    height: 54px;
+    padding-left: 31px;
+    padding-right: 80px;
+    background-color: transparent;
+    border: var(--border);
+    font-size: 13px;
+    color: var(--color-light);
+    transition-duration: 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 100%;
+      aspect-ratio: 1;
+      background: url("./../images/icons/arrow-top-right.svg") center/70%
+        no-repeat;
+      border: var(--border);
+      border-radius: 50%;
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      color: var(--color-dark);
+      background-color: var(--color-light-gray);
+
+      &::after {
+        border-color: var(--color-dark);
+      }
+    }
+  }
 }
 
 .visually-hidden {
